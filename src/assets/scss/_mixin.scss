@@ -1,0 +1,5 @@
+@mixin bg-dark {
+  background-image: -webkit-linear-gradient(top,#2e3535 0%,#2b3131 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#2e3535),to(#2b3131));
+  background-image: linear-gradient(to bottom,#2e3535 0%,#2b3131 100%);
+}
