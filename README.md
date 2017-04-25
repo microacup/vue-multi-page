@@ -37,15 +37,15 @@ npm start
 ``` 
 webpack
  ├──build # build folder
- ├──src	# main folder
- │   └──assets 		# 公用模块
- │       ├──scss	# scss
- │       ├──images	# images
- │       └──js		# javascript
- │			├──vue.js   		# 封装了公用模块，可以作为公用模块的入口
- │			├──config.js   		# 项目的配置
- │			├──utils.js    		# 通用工具类
- │			└──filters.js  		# vue全局过滤器	      
+ ├──src # main folder
+ │   └──assets          # 公用模块
+ │       ├──scss # scss
+ │       ├──images # images
+ │       └──js         # javascript
+ │           ├──vue.js            # 封装了公用模块，可以作为公用模块的入口
+ │           ├──config.js         # 项目的配置
+ │           ├──utils.js          # 通用工具类
+ │           └──filters.js        # vue全局过滤器
  ├──components # 组件
  │   └──Hello.vue # 示例组件
  ├──views    # 各个页面模块
@@ -62,7 +62,7 @@ webpack
  │      └──chat    #二级目录
  │          ├──chat.html
  │          ├──chat.js
- │          └──chatApp.vue	
+ │          └──chatApp.vue
  ├──dist # 编译文件目录
  ├──static # .gitkeep
  ├──test # test
@@ -72,7 +72,6 @@ webpack
  ├──.eslintrc.js # eslint config
  ├──package.json
  └──README.md
-     
 ```
 
 
