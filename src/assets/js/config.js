@@ -1,3 +1,3 @@
 export default {
-  title: 'vue multi page app',
+  title: 'Vue多页面模板',
 };

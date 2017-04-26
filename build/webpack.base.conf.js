@@ -4,7 +4,7 @@ var webpack = require('webpack')
 var config = require('../config')
 
 var glob = require('glob');
-var entries = utils.getMultiEntry('./src/' + config.moduleName + '/**/**/*.js'); // 获得入口js文件
+var entries = utils.getMultiEntry('./src/views/**/**/*.js'); // 获得入口js文件
 var chunks = Object.keys(entries);
 
 console.log(chunks)
@@ -18,16 +18,14 @@ function resolve(dir) {
 }
 
 module.exports = {
-
   entry: entries,
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
-    publicPath: process.env.NODE_ENV === 'production' ?
-      config.build.assetsPublicPath :
-      config.dev.assetsPublicPath
+    publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath
   },
   resolve: {
+    // 注意一下, extensions webpack2第一个不是空字符串! 对应不需要后缀的情况.
     extensions: ['.js', '.vue', '.json', '.scss'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
@@ -38,8 +36,7 @@ module.exports = {
     }
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.vue$/,
         loader: 'eslint-loader',
         enforce: 'pre',
@@ -88,14 +85,6 @@ module.exports = {
     ]
   },
   plugins: [
-    /*
-    // 提取公共模块
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendors', // 公共模块的名称
-      chunks: chunks,  // chunks是需要提取的模块
-      minChunks: 4 || chunks.length //公共模块被使用的最小次数。比如配置为3，也就是同一个模块只有被3个以外的页面同时引用时才会被提取出来作为common chunks。
-
-    }),*/
-
+    // 在具体环境中
   ]
 };

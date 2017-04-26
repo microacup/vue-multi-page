@@ -1,7 +1,12 @@
 <template>
 <div id="app">
-  {{webname}}
+  {{webname}} - Page
   {{ new Date() | formatTime }}
+
+  <p>
+    <a href="/index.html">返回首页</a>
+  </p>
+
 </div>
 </template> 
 

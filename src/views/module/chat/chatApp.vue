@@ -1,9 +1,13 @@
 <template>
 <div id="app">
-  {{webname}}
+  {{webname}} - Chat
+  <p>
+    <a href="/index.html">返回首页</a>
+  </p>
   
 </div>
 </template> 
+
 <script>
 
 import { config } from '../../../assets/js/vue';
@@ -16,7 +20,6 @@ export default {
     };
   },
   mounted() {
-    console.log(this.webname);
   },
   methods: {
   },
