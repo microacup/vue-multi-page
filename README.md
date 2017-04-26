@@ -10,8 +10,7 @@
     4. 多页面可使用vue-router路由
     5. 可自定义页面模块名，例如 http:// localhost:7071/`views`/web/index.html，`views`就是我们线上的模块名
     6. 使用`axios`
-    7. 基于`webpack2`
-    8. 加入eslint, airbnb级，自动修正错误
+    7. 加入eslint, airbnb级，自动修正错误
 
 ## Build Setup
 
