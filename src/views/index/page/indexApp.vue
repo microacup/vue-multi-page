@@ -2,16 +2,19 @@
 <div id="app">
   <h1>Vue多页面模板: {{ title }}</h1>
   <el-menu class="el-menu-demo" mode="horizontal">
-    <el-menu-item index="1"><a href="/module/page.html">Page</a></el-menu-item>
-    <el-menu-item index="2"><a href="/module/chat.html">Chat</a></el-menu-item>
+    <el-menu-item index="1"><a :href="contextPath + 'module/page.html'">Page</a></el-menu-item>
+    <el-menu-item index="2"><a :href="contextPath + 'module/chat.html'">Chat</a></el-menu-item>
   </el-menu>
 </div>
 </template> 
 <script>
+import { config } from '../../../assets/js/vue';
+
 export default {
   name: 'App',
   data() {
     return {
+      contextPath: config.contextPath,
       title: this.$store.getters.WEB_INDEX,
     };
   },

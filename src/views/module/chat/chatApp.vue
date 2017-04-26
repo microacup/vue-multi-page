@@ -2,7 +2,7 @@
 <div id="app">
   {{webname}} - Chat
   <p>
-    <a href="/index.html">返回首页</a>
+    <a :href="contextPath + 'index.html'">返回首页</a>
   </p>
   
 </div>
@@ -16,6 +16,7 @@ export default {
   name: 'App',
   data() {
     return {
+      contextPath: config.contextPath,
       webname: config.title,
     };
   },
