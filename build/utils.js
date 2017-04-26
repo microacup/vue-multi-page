@@ -89,15 +89,12 @@ exports.getMultiEntry = function (globPath) {
       let moduleName = folders[1];
       let pathName = moduleName + '/' + pageName; // 正确输出js和html的路径
       if (moduleName === 'index') {
-        console.log('俺是首页，俺要独立啦');
         pathName = moduleName;
       }
 
       entries[pathName] = entry;
     }
   });
-
-  console.log(entries);
 
   return entries;
 }
