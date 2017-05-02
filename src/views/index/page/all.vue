@@ -3,7 +3,7 @@
   <h1>Vue多页面模板: {{ title }}</h1>
   
   <p>
-    <a :href="contextPath + '/'">返回首页</a>
+    <router-link to="/">返回首页</router-link>
   </p>
 </div>
 </template> 
