@@ -1,9 +1,10 @@
 <template>
-<div id="app">
+<div id="index-app">
   <h1>Vue多页面模板: {{ title }}</h1>
   <el-menu class="el-menu-demo" mode="horizontal">
-    <el-menu-item index="1"><a :href="contextPath + 'module/page.html'">Page</a></el-menu-item>
-    <el-menu-item index="2"><a :href="contextPath + 'module/chat.html'">Chat</a></el-menu-item>
+    <el-menu-item index="1"><a :href="contextPath + '/module/page.html'">Page</a></el-menu-item>
+    <el-menu-item index="2"><a :href="contextPath + '/module/chat.html'">Chat</a></el-menu-item>
+    <el-menu-item index="2"><a :href="contextPath + '/all'">Router-All</a></el-menu-item>
   </el-menu>
 </div>
 </template> 

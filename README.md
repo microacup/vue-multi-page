@@ -100,11 +100,6 @@ store.registerModule('web', web);
 new Vue({ ...App, store }).$mount('#app');
 ```
 
-## TODO
-
-1. Vue-router Demo
-
-
 ## 推荐
 
 - 代码格式使用默认规则

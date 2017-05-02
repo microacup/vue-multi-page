@@ -13,6 +13,9 @@ var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = process.env.NODE_ENV === 'production'
   ? require('./webpack.prod.conf')
   : require('./webpack.dev.conf')
+var contextPath = process.env.NODE_ENV === 'production'
+  ? config.build.contextPath
+  : config.dev.contextPath;
 
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port
@@ -52,8 +55,14 @@ Object.keys(proxyTable).forEach(function (context) {
 })
 
 // handle fallback for HTML5 history API
-app.use(require('connect-history-api-fallback')())
-
+app.use(require('connect-history-api-fallback')({
+  index: contextPath + '/index.html',
+  logger: console.log.bind(console),
+  rewrites: [
+    { from: /\/module\/page\/.*$/, to: '/module/page.html'},
+    { from: /\/module\/chat\/.*$/, to: '/module/chat.html'}
+  ]
+}))
 // serve webpack bundle output
 app.use(devMiddleware)
 

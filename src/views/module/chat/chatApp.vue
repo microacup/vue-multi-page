@@ -2,7 +2,7 @@
 <div id="app">
   {{webname}} - Chat
   <p>
-    <a :href="contextPath + 'index.html'">返回首页</a>
+    <a :href="contextPath + '/'">返回首页</a>
   </p>
   
 </div>
