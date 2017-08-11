@@ -28,10 +28,11 @@ module.exports = {
     // 注意一下, extensions webpack2第一个不是空字符串! 对应不需要后缀的情况.
     extensions: ['.js', '.vue', '.json', '.scss'],
     alias: {
-      'vue$': 'vue/dist/vue',
+      'vue$': 'vue/dist/vue.common.js',
       '@': resolve('src'),
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
+      'store': path.resolve(__dirname, '../src/store'),
       'components': path.resolve(__dirname, '../src/components')
     }
   },

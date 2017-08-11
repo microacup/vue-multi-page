@@ -1,4 +1,4 @@
-const moment = require('moment');
+const moment = window.moment;
 
 export function formatDate(date) {
   if (date) {

@@ -8,6 +8,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+var AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
 
 var entries = utils.getMultiEntry('./src/views/**/**/*.js'); // 获得入口js文件
 var chunks = Object.keys(entries);
@@ -55,8 +56,20 @@ var webpackConfig = merge(baseWebpackConfig, {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       chunks: chunks,
-      minChunks: chunks.length > 3 ? 3 : chunks.length
+      minChunks: chunks.length > 3 ? chunks.length - 1 : 2
     }),
+    new webpack.DllReferencePlugin({
+      context: path.resolve(__dirname, '..'),
+      manifest: require('./vendor-manifest.json')
+    }),
+    // 复制公共dll.js，并插入html
+    new AddAssetHtmlPlugin([{
+      filepath: path.resolve(__dirname,'../static/js/vendor.dll.js'), // 同webpack.dll.conf.js output
+      outputPath: utils.assetsPath('js'),
+      publicPath: path.posix.join(config.build.assetsPublicPath, 'static/js'),
+      includeSourcemap: false,
+      hash: true,
+    }])
   ]
 })
 
