@@ -29,10 +29,15 @@ cd vue-multi-page & npm install
 npm run dev
 
 # 打包
+npm run build:dll # 编译公共部分
 npm run build
 
 # 模拟生产环境
 npm start
+
+# 锁定版本
+npm shrinkwrap
+
 ```
 
 ## 目录结构
