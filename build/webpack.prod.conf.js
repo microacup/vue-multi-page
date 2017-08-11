@@ -105,7 +105,7 @@ for (var pathname in pages) {
     template: pages[pathname], // 模板路径
     chunks: ['vendor', pathname], // 每个html引用的js模块
     inject: true, // js插入位置
-    hash: true,
+    hash: false,
     minify: { //压缩HTML文件
       removeComments: true, //移除HTML中的注释
       collapseWhitespace: false //删除空白符与换行符
